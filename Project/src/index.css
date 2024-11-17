@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{
+  background:linear-gradient(180deg, rgb(13, 14, 29),rgb(26, 2, 26));
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: white;
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+
