@@ -1,5 +1,13 @@
 {
-  "dependencies": {
-    "axios": "^1.7.7"
+  "name": "SONICVIBES",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+    "start-frontend": "npm run dev --prefix project",  
+    "start-backend": "npm start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
   }
 }

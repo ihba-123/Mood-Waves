@@ -1,11 +1,10 @@
 import React from "react";
-
 function About() {
   return (
     <div>
-    <div className="bg-gradient-to-b  text-white py-[190px] px-4 md:px-12 lg:px-24 ">
+    <div className="bg-gradient-to-b  text-white py-[170px]  md:px-12 lg:px-24 ">
       <div className="py-[12px] max-w-4xl mx-auto text-center">
-        <h2 className="text- text-5xl font-bold mb-9">
+        <h2 className="text- text-5xl font-bold mb-10">
           We're about making a positive impact.
         </h2>
         <p className="text-lg md:text-xl text-gray-200 font-bold  mb-6">
@@ -14,7 +13,7 @@ function About() {
           first.
         </p>
         <div className="flex items-center justify-center -mt-[450px] md:relative md:top-36  ">
-            <img src="MUSIC.png" alt = "/" className="-z-10  h-[600px] w-[600px] brightness-50"/>
+            <img src="anohappy.png" alt = "/" className="-z-10  h-[600px] w-[500px] brightness-50"/>
         </div>
       </div>    
     </div>
@@ -22,7 +21,7 @@ function About() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
         
         {/* Mission Section */}
-        <div className="flex-1 items-center mt-44 h-[60vh]">
+        <div className="flex-1 items-center mt-11 ">
           <div className="flex items-center   space-x-2">
             <div className="text-blue-500">
               {/* Mission Icon (can use an icon from an icon library) */}
@@ -41,7 +40,7 @@ function About() {
         </div>
 
         {/* Vision Section */}
-        <div className="flex-1 mt-44">
+        <div className="flex-1 mt-11">
           <div className="flex items-center space-x-2">
             <div className="text-green-500">
               {/* Vision Icon */}
@@ -63,5 +62,6 @@ function About() {
     </div>
   );
 }
+
 
 export default About;

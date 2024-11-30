@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { GiHamburgerMenu, GiCrossMark } from "react-icons/gi";
 
 function Header() {
@@ -10,47 +10,54 @@ function Header() {
   };
 
   return (
-    <header className=" flex md:px-2  justify-around lg:px-42 lg:justify-evenly items-center h-20  md:hover:drop-shadow-2xl px-3 w-full">
-      {/* Logo */}
-      <NavLink to={"/"} className="md:px-2 flex items-center gap-3 md:gap-2">
-        <img src="headphones.png" alt="headphone" className="h-10 sm:h-16 md:h-12" />
-        <span className="xl:text-4xl text-xl md:text-2xlb lg:text-3xl font-bold md:text-2xl">SonicVibes</span>
-      </NavLink>
+    <header className="bg-black text-white w-full z-50">
+      <div className="container mx-auto px-4">
+        {/* Header Flex Container */}
+        <div className="flex justify-between items-center py-4">
+          {/* Logo Section */}
+          <Link
+            to="/"
+            className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+            data-text="SonicVibes"
+          >
+            SonicVibes
+          </Link>
 
-      {/* Navbar Links (Toggles visibility based on screen size and isOpen state) */}
-      <nav
-        className={` xl:text-2xl  lg:h-10 lg:flex lg:gap-1 md:static md:flex lg:mx-2 lg:space-x-16 lg:text-xl md:bg-transparent gap-8 text-xl md:w-auto md:text-lg  flex flex-col items-center list-none  absolute top-20 w-full h-60 md:flex-row bg-[#20052cb0]  ${
-          isOpen ? 'block' : 'hidden'}  md:block`}
-      >
+          {/* Hamburger/Close Icon for Mobile */}
+          <div className="menu-icon  cursor-pointer md:hidden" onClick={toggleMenu}>
+            {isOpen ? (
+              <GiCrossMark className="text-3xl  text-cyan-400" />
+            ) : (
+              <GiHamburgerMenu className="text-3xl text-cyan-400" />
+            )}
+          </div>
 
-        <NavLink to={'/'}>
-          <li className="hover:text-gray-300 my-1">Home</li>
-        </NavLink>
-        <NavLink to={'/About'}>
-          <li className="hover:text-gray-300">About</li>
-        </NavLink>
-        <NavLink to={'/OurScience'}>
-          <li className="hover:text-gray-300  ">Our Science</li>
-        </NavLink>
-        <NavLink to={'/Contact'}>
-          <li className="hover:text-gray-300">Contact</li>
-        </NavLink>
-      </nav>
-
-      {/* Sign In Button */}
-      <NavLink to={'/SignIn'}>
-        <li className="md:font-bold mx-5 left-8 md:left-5 list-none shadow-2xl  text-base bg-opacity-50 drop-shadow-xl text-gray-100 bg-transparent lg:px-10 lg:py-2 md:px-5 md:py-1 font-bold px-5 py-2 backdrop-blur-3xl rounded-3xl border hover:drop-shadow-2xl hover:transition duration-300 delay-150 hover:delay-100 hover:ring-2 ring-gray-500  md:text-xl active:bg-white ">
-          Sign In
-        </li>
-      </NavLink>
-      
-            {/* Hamburger and Cross Icons (Visible on small screens) */}
-      <div className="md:hidden">
-        {isOpen ? (
-          <GiCrossMark onClick={toggleMenu} className="text-3xl text-white cursor-pointer absolute right-4 top-6" />
-        ) : (
-          <GiHamburgerMenu onClick={toggleMenu} className="text-3xl text-white cursor-pointer absolute right-4 top-6" />
-        )}
+          {/* Navigation Menu */}
+          <nav
+            className={`${
+              isOpen ? "flex" : "hidden"
+            } flex-col md:flex md: md:flex-row md:items-center md:space-x-6 absolute md:static top-16 left-0 w-full md:w-auto bg-black md:bg-transparent px-6 md:px-0 z-40`}
+          >
+            <Link to="/" className="nav-link  py-2 text-2xl  font-bold md:py-0" data-text="Home">
+              Home
+            </Link>
+            <Link to="/About" className="nav-link py-2 text-2xl font-bold  md:py-0" data-text="About">
+              About
+            </Link>
+            <Link to="/OurScience" className="nav-link text-2xl font-bold  py-2 md:py-0" data-text="Our Science">
+              Our Science
+            </Link>
+            <Link to="/Contact" className="nav-link py-2 text-2xl font-bold  md:py-0" data-text="Contact">
+              Contact
+            </Link>
+            <Link
+              to="/Login"
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-2 px-4 rounded hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 text-xl"
+            >
+              Log In
+            </Link>
+          </nav>
+        </div>
       </div>
     </header>
   );
