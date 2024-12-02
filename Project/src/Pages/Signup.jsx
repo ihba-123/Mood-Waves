@@ -1,4 +1,4 @@
-  import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
   import { Link, useNavigate } from "react-router-dom";
   import { ToastContainer, toast } from "react-toastify";
   import "react-toastify/dist/ReactToastify.css";
@@ -81,7 +81,7 @@
           }}
         ></div>
 
-        <div className="bg-white font-bold bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full z-10">
+        <div className="bg-white font-bold bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full z-10"data-Aos="zoom-in">
           <h1 className="text-4xl font-bold text-center mb-8 text-grey-800">Sign up</h1>
           <form onSubmit={handleSignup} className="space-y-6">
             <input

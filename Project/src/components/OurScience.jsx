@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
 import { NavLink } from "react-router-dom";
 const researchButtonClass =
   "inline-block px-8 py-3 text-sm  relative  top-9 md:text-base font-semibold text-black font-bold bg-gray-200 rounded-full hover:bg-gray-600 transition z-50 ";
@@ -6,6 +7,16 @@ const sectionClass =
   "relative flex items-center justify-center  text-center -top-[100px] h-[100vh] w-full ";
 
 function OurScience() {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,      
+      delay: 200,       
+      duration: 1000,   
+      easing: 'ease',   
+      once: true,       
+      mirror: false,
+    });
+  },[])
   const data = [
     { label: "Resting", color: "from-blue-500 to-blue-300" },
     { label: "Pink Noise", color: "from-pink-500 to-pink-300" },
@@ -26,7 +37,7 @@ function OurScience() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-xl bottom-36">
+        <div className="relative z-10 max-w-xl bottom-36" data-AOS="fade-up">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
             Unlock the Power of Sound
           </h1>
@@ -38,7 +49,7 @@ function OurScience() {
       </div>
 
       {/* Second Section with Glass Effect */}
-      <div className={`${sectionClass} p-0 `}>
+      <div className={`${sectionClass} p-0  `} data-AOS="fade-down">
         <div className="absolute inset-0 bg-gradient-to-b-z-10 " />
 
         {/* Content Box with Glass Effect */}
@@ -63,11 +74,11 @@ function OurScience() {
           </NavLink>
         </div>
       </div>
-      <div className="h-[2px] bg-gray-200 mx-12 "></div>
-      <div className=" text-white px-6 py-12 md:py-20 md:px-16 bg-[#000000b6]">
+      <div className="h-[2px] bg-gray-200 mx-12 " data-AOS="zoom-in"></div>
+      <div className=" text-white px-6 py-12 md:py-20 md:px-16 bg-[#000000b6]"  data-AOS="fade-up">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 ">
           {/* Text Section */}
-          <div className="flex-1 ">
+          <div className="flex-1 " data-AOS="zoom-out">
             <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
               Electrical activity in the brain: EEG studies
             </h2>
@@ -82,16 +93,16 @@ function OurScience() {
         </div>
       </div>
       <div className="bg-[#000000b6] text-white py-16 px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-xl text-center uppercase text-gray-400 tracking-wider mb-10">
+        <div className="max-w-7xl mx-auto" >
+          <h2 className="text-xl text-center uppercase text-gray-400 tracking-wider mb-10"data-AOS="fade-up">
             Sonic Vibes' Research and Methods
           </h2>
-          <h1 className="text-4xl font-bold mb-8 text-center">
+          <h1 className="text-4xl font-bold mb-8 text-center"data-AOS="fade-up">
             Read Our Science
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-gradient-to-b from-gray-800  to-black p-6 rounded-lg shadow-lg">
+            <div className="bg-gradient-to-b from-gray-800  to-black p-6 rounded-lg shadow-lg"data-AOS="fade-down">
               <h3 className="text-lg font-semibold m-2">
                 Rapid modulation in music supports attention in listeners with
                 attentional difficulties
@@ -108,7 +119,7 @@ function OurScience() {
               </NavLink>
             </div>
             {/* Card 2 */}
-            <div className="bg-gradient-to-b from-gray-800 to-black p-6 rounded-lg shadow-lg">
+            <div className="bg-gradient-to-b from-gray-800 to-black p-6 rounded-lg shadow-lg"data-AOS="fade-down">
               <h3 className="text-lg font-semibold mb-2">
                 Modulation in background music influences sustained attention
               </h3>
@@ -124,7 +135,7 @@ function OurScience() {
               </NavLink>
             </div>
             {/* Card 3 */}
-            <div className="bg-gradient-to-b from-gray-800 to-black p-6 rounded-lg shadow-lg">
+            <div className="bg-gradient-to-b from-gray-800 to-black p-6 rounded-lg shadow-lg"data-AOS="fade-down">
               <h3 className="text-lg font-semibold mb-2">
                 Headphone screening to facilitate web-based auditory experiments
               </h3>
@@ -144,12 +155,12 @@ function OurScience() {
       <div className="bg-[#000000b6] text-white py-10 px-5 md:px-20 lg:px-40">
         <div className="text-center md:text-left">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"data-AOS="zoom-in">
             Brainwave patterns: SonicVibes EEG studies
           </h2>
 
           {/* Description */}
-          <p className="text-gray-300 text-lg md:text-xl mb-8">
+          <p className="text-gray-300 text-lg md:text-xl mb-8"data-AOS="zoom-in">
             SonicVibes explores how different sound frequencies influence
             brainwave patterns, measured through electroencephalography (EEG).
             Observe how our frequencies create more focused and relaxed brain
@@ -160,33 +171,33 @@ function OurScience() {
         {/* EEG Circles and Labels */}
         <div className="flex flex-col items-center md:flex-row justify-around gap-8">
           {data.map((item, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div key={index} className="flex flex-col items-center" data-AOS="zoom-in">
               {/* Dynamic Circle */}
               <div
                 className={`h-20 w-20 sm:h-28 sm:w-28 md:h-32 md:w-32 lg:h-36 lg:w-36 rounded-full bg-gradient-to-br ${item.color}`}
-              ></div>
-              <p className="text-lg font-semibold mt-2">{item.label}</p>
+                ></div>
+              <p className="text-lg font-semibold mt-2"data-AOS="zoom-in">{item.label}</p>
             </div>
           ))}
         </div>
 
         {/* Phase Locking Bar */}
         <div className="mt-10">
-          <div className="flex justify-between items-center text-sm md:text-base text-gray-400">
-            <span>Low Focus</span>
+          <div className="flex justify-between items-center text-sm md:text-base text-gray-400"data-AOS="flip-right">
+            <span >Low Focus</span>
             <span>Moderate Focus</span>
             <span>High Focus</span>
             <span>Peak Focus</span>
           </div>
           <div className="h-2 mt-2 rounded-full bg-gradient-to-r from-blue-500 via-green-500 to-red-500"></div>
-          <p className="text-center text-gray-500 text-sm mt-2">
+          <p className="text-center text-gray-500 text-sm mt-2"data-AOS="flip-left">
             EEG focus measurement over a 5-minute session.
           </p>
         </div>
       </div>
       <div className="bg-gray-950 p-4 min-h-screen">
         <div className="max-w-7xl mx-auto h-max px-6 md:px-12 xl:px-6">
-          <div className="md:w-2/3 lg:w-1/2">
+          <div className="md:w-2/3 lg:w-1/2" data-AOS="zoom-in">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -199,14 +210,14 @@ function OurScience() {
                 clipRule="evenodd"
               />
             </svg>
-            <h2 className="my-8 text-2xl font-bold text-white md:text-4xl">
+            <h2 className="my-8 text-2xl font-bold text-white md:text-4xl"data-AOS="zoom-out">
               How we work?
             </h2>
-            <p className="text-gray-300">
+            <p className="text-gray-300"data-AOS="zoom-out">
               We follow our process to get you started as quickly as possible
             </p>
           </div>
-          <div className="mt-16 grid divide-x divide-y divide-gray-700 overflow-hidden rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4">
+          <div className="mt-16 grid divide-x divide-y divide-gray-700 overflow-hidden rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4" data-AOS = "fade">
             {[
               {
                 title: "How Sonic Vibes Works?",

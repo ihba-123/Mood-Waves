@@ -57,7 +57,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/presentation?ref=njs-profile"
+                      href="/ "
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -67,7 +67,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://blog.creative-tim.com?ref=njs-profile"
+                      href="/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -77,7 +77,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://github.com/"
+                      href="/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -87,7 +87,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile"
+                      href="/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -112,7 +112,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/terms?ref=njs-profile"
+                      href="/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -122,7 +122,7 @@ function Footer() {
                   <li>
                     <a
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/privacy?ref=njs-profile"
+                      href="/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -132,7 +132,7 @@ function Footer() {
                   <li>
                     <NavLink
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/presentation?ref=njs-profile"
+                      href="/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

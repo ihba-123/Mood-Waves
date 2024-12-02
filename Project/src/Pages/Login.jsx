@@ -3,8 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import Aos from "aos";
 function Login() {
+  useEffect(()=>{
+    Aos.init({
+      duration: 2000,
+      easing: "ease-in-sin",
+      });
+  },[])
   const navigate = useNavigate();
   const [login, setLogin] = useState({ email: "", password: "" });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -71,7 +77,7 @@ function Login() {
         });
         setTimeout(() => {
           navigate("/Music"); // Adjust route as per your app's structure
-        },1000);
+        }, 1000);
       }
     } catch (error) {
       toast.error(error.message || "An error occurred", {
@@ -83,7 +89,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r black relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r black relative overflow-hidden" >
       <div
         className="absolute top-0 left-0 w-full h-full pointer-events-none"
         style={{
@@ -92,7 +98,7 @@ function Login() {
         }}
       ></div>
 
-      <div className="bg-white font-bold bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full z-10">
+      <div className="bg-white font-bold bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full z-10"data-Aos="zoom-out">
         <h1 className="text-4xl font-bold text-center mb-8 text-white">
           Login
         </h1>
@@ -117,7 +123,9 @@ function Login() {
           <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-lg hover:opacity-80 transition duration-300">
             Login
           </button>
+          
         </form>
+
         <div className="mt-8 text-center">
           <span className="text-purple-950">Don't have an account? </span>
           <Link

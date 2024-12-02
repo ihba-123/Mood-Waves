@@ -1,8 +1,18 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import AOS from 'aos';
 function Contact() {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,      
+      delay: 200,       
+      duration: 1000,   
+      easing: 'ease',   
+      once: true,       
+      mirror: false, 
+      });
+  },[])
   const onSubmit = async (event) => {
     event.preventDefault();
 
@@ -55,12 +65,13 @@ function Contact() {
         className="container w-full max-w-lg p-8 space-y-6 bg-opacity-90 bg-gradient-to-br from-purple-800 via-indigo-900  backdrop-blur-md rounded-xl shadow-2xl text-white"
         onSubmit={onSubmit}
         method="POST"
+        data-AOS="zoom-in"
       >
-        <h2 className="text-4xl font-extrabold text-center text-white tracking-wide font-serif">
+        <h2 className="text-4xl font-extrabold text-center text-white tracking-wide font-serif"data-AOS="fade-left">
           Contact Us
         </h2>
         <div>
-          <label htmlFor="name" className="block mb-2 text-lg font-semibold">
+          <label htmlFor="name" className="block mb-2 text-lg font-semibold" data-AOS="fade-left">
             Name
           </label>
           <input
@@ -69,10 +80,11 @@ function Contact() {
             type="text"
             placeholder="Your name"
             className="block w-full p-3 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 bg-white text-black placeholder-gray-400"
+            data-AOS="fade-right"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block mb-2 text-lg font-semibold">
+          <label htmlFor="email" className="block mb-2 text-lg font-semibold"data-AOS="fade-left">
             Email
           </label>
           <input
@@ -81,10 +93,11 @@ function Contact() {
             type="email"
             placeholder="Your email"
             className="block w-full p-3 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 bg-white text-black placeholder-gray-400"
+            data-AOS="fade-right"
           />
         </div>
         <div>
-          <label htmlFor="message" className="block mb-2 text-lg font-semibold">
+          <label htmlFor="message" className="block mb-2 text-lg font-semibold"data-AOS="fade-left">
             Message
           </label>
           <textarea
@@ -92,6 +105,7 @@ function Contact() {
             name="message"
             placeholder="Your message..."
             className="block w-full p-3 h-32 rounded-md shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1 bg-white text-black placeholder-gray-400"
+            data-AOS="fade-right"
           ></textarea>
         </div>
         <div>
