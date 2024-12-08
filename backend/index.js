@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json()); // Replace bodyParser
 app.use(cors())
 
+
 // Routes
 app.use('/auth', router);
 app.get('/api', (req, res) => res.send("START"));

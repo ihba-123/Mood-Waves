@@ -1,8 +1,8 @@
 import React,{useEffect} from "react";
-import AOS from 'aos'
+import aos from 'aos'
 function About() {
   useEffect(() => {
-    AOS.init({
+    aos.init({
       offset: 200,      
       delay: 200,       
       duration: 1000,   
@@ -15,16 +15,16 @@ function About() {
     <div>
     <div className="bg-gradient-to-b  text-white py-[170px]  md:px-12 lg:px-24 ">
       <div className="py-[12px] max-w-4xl mx-auto text-center">
-        <h2 className="text- text-5xl font-bold mb-10"data-AOS="fade-left">
+        <h2 className="text- text-5xl font-bold mb-10"data-aos="fade-left">
           We're about making a positive impact.
         </h2>
-        <p className="text-lg md:text-xl text-gray-200 font-bold  mb-6" data-AOS="fade-right">
+        <p className="text-lg md:text-xl text-gray-200 font-bold  mb-6" data-aos="fade-right">
           Music is usually made to grab your attention, which leads to
           distraction. We create music with a new approach, putting your needs
           first.
         </p>
         <div className="flex items-center justify-center -mt-[450px] md:relative md:top-36  ">
-            <img src="anohappy.png" alt = "/" className="-z-10  h-[600px] w-[500px] brightness-50"data-AOS="zoom-in"/>
+            <img src="anohappy.png" alt = "/" className="-z-10  h-[600px] w-[500px] brightness-50"data-aos="zoom-in"/>
         </div>
       </div>    
     </div>
@@ -33,7 +33,7 @@ function About() {
         
         {/* Mission Section */}
         <div className="flex-1 items-center mt-11 ">
-          <div className="flex items-center   space-x-2 "data-AOS="fade-left">
+          <div className="flex items-center   space-x-2 "data-aos="fade-left">
             <div className="text-blue-500">
               {/* Mission Icon (can use an icon from an icon library) */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,7 +42,7 @@ function About() {
             </div>
             <h2 className="text-3xl font-bold" >Our Mission</h2>
           </div>
-          <div data-AOS="fade-left">
+          <div data-aos="fade-left">
           <p className="mt-4 text-xl">
             Our mission is to foster creativity and innovation, empowering individuals to express themselves and explore new possibilities.
           </p>
@@ -54,7 +54,7 @@ function About() {
 
         {/* Vision Section */}
         <div className="flex-1 mt-11">
-          <div className="flex items-center space-x-2"data-AOS="fade-right">
+          <div className="flex items-center space-x-2"data-aos="fade-right">
             <div className="text-green-500">
               {/* Vision Icon */}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,7 +63,7 @@ function About() {
             </div>
             <h2 className="text-3xl font-bold">Our Vision</h2>
           </div>
-          <div data-AOS="fade-right">
+          <div data-aos="fade-right">
           <p className="mt-4 text-xl">
             Our vision is a future where technology and creativity unite to create experiences that enhance and inspire lives globally.
           </p>

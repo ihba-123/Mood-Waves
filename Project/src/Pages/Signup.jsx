@@ -90,7 +90,7 @@ import React, { useState, useEffect } from "react";
               type="text"
               value={signup.name}
               placeholder="Username"
-              className="w-full bg-transparent text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-pink-500"
+              className="w-full bg-transparent border text-white px-4 py-3 rounded-xl focus:ring-2 focus:ring-pink-500"
             />
             <input
               onChange={handleChange}
@@ -98,7 +98,7 @@ import React, { useState, useEffect } from "react";
               type="email"
               value={signup.email}
               placeholder="Email"
-              className="w-full bg-transparent text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
+              className="w-full bg-transparent border text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
             />
             <input
               autoComplete="off"
@@ -107,7 +107,7 @@ import React, { useState, useEffect } from "react";
               type="password"
               value={signup.password}
               placeholder="Password"
-              className="w-full bg-transparent text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
+              className="w-full bg-transparent border text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
             />
             <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-lg hover:opacity-80 transition duration-300">
               Sign Up

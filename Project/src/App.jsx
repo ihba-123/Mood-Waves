@@ -7,25 +7,21 @@ const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
 const OurScience = lazy(() => import("./components/OurScience"));
 const Home = lazy(() => import("./components/Home"));
-const GoogleLogin = lazy(() => import("./components/GoogleLogin"));
 const Login = lazy(() => import("./Pages/Login"));
 const Music = lazy(() => import("./Pages/Music"));
 const Signup = lazy(() => import("./Pages/Signup"));
 const RefreshHandler = lazy(() => import("./Pages/RefreshHandler"));
 
+const PrivateRoute = ({ isAuthenticate, children }) => {
+  return isAuthenticate ? children : <Navigate to="/login" />;
+};
+
+const PublicRoute = ({   isAuthenticate, children }) => {
+  return isAuthenticate ? <Navigate to="/" /> : children;
+};
+
 function App() {
-  // Authentication state
   const [isAuthenticate, setIsAuthenticate] = useState(false);
-
-  // PrivateRoute component
-  const PrivateRoute = ({ element }) => {
-    return isAuthenticate ? element : <Navigate to="/login" />;
-  };
-
-  // PublicRoute component for redirecting authenticated users
-  const PublicRoute = ({ element }) => {
-    return isAuthenticate ? <Navigate to="/" /> : element;
-  };
 
   return (
     <Router>
@@ -39,25 +35,40 @@ function App() {
           </div>
         }
       >
-        {/* Refresh Authentication State */}
-        <RefreshHandler setIsAuthenticate={setIsAuthenticate}/>
+        <RefreshHandler setIsAuthenticate={setIsAuthenticate} />
 
         <Routes>
-          {/* Authentication Routes */}
-          <Route path="/login" element={<PublicRoute element={<Login />} />} />
-          <Route path="/signup" element={<PublicRoute element={<Signup />} />} />
-
-          {/* Private Routes */}
-          <Route path="/music" element={<PrivateRoute element={<Music />} />} />
-
-          {/* Public Routes */}
-          <Route path="/" element={<PublicRoute element={<Root />} />}>
+          <Route
+            path="/login"
+            element={
+              <PublicRoute isAuthenticate={isAuthenticate}>
+                <Login />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <PublicRoute isAuthenticate={isAuthenticate}>
+                <Signup />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/music"
+            element={
+              <PrivateRoute isAuthenticate={isAuthenticate}>
+                <Music />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/" element={<Root />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/ourscience" element={<OurScience />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/googlelogin" element={<GoogleLogin />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </Router>

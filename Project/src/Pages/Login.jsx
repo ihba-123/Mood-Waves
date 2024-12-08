@@ -3,19 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Aos from "aos";
+import aos from "aos";
+import GoogleLogin from "../components/GoogleLogin";
 function Login() {
-  useEffect(()=>{
-    Aos.init({
-      duration: 2000,
-      easing: "ease-in-sin",
-      });
-  },[])
   const navigate = useNavigate();
   const [login, setLogin] = useState({ email: "", password: "" });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    aos.init({
+      duration: 2000,
+      easing: "ease-in-sin",
+    });
     // Handle mouse movement to create dynamic background effect
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -89,7 +88,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r black relative overflow-hidden" >
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r black relative overflow-hidden">
       <div
         className="absolute top-0 left-0 w-full h-full pointer-events-none"
         style={{
@@ -98,7 +97,10 @@ function Login() {
         }}
       ></div>
 
-      <div className="bg-white font-bold bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full z-10"data-Aos="zoom-out">
+      <div
+        className="bg-white font-bold bg-opacity-20 backdrop-blur-lg p-8 rounded-3xl shadow-2xl max-w-md w-full z-10"
+        data-aos="zoom-out"
+      >
         <h1 className="text-4xl font-bold text-center mb-8 text-white">
           Login
         </h1>
@@ -109,7 +111,7 @@ function Login() {
             type="email"
             value={login.email}
             placeholder="Email"
-            className="w-full bg-transparent text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
+            className="w-full bg-transparent border text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
           />
           <input
             autoComplete="off"
@@ -118,14 +120,22 @@ function Login() {
             type="password"
             value={login.password}
             placeholder="Password"
-            className="w-full bg-transparent text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
+            className="w-full bg-transparent border text-white px-4 py-3 rounded-lg focus:ring-2 focus:ring-pink-500"
           />
           <button className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-lg hover:opacity-80 transition duration-300">
             Login
           </button>
-          
         </form>
-
+        <div className="flex items-center my-4">
+          <div className="flex-grow border-t border-gray-300"></div>
+          <span className="mx-3 text-gray-300 text-sm font-medium">
+            Or Continue with?
+          </span>
+          <div className="flex-grow border-t border-gray-300"></div>
+        </div>
+        <div className="flex items-center justify-center p-2">
+          <GoogleLogin />
+        </div>
         <div className="mt-8 text-center">
           <span className="text-purple-950">Don't have an account? </span>
           <Link
